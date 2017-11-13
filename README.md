@@ -6,6 +6,7 @@ This repository contains files for:
   - `Functions/` - function quick reference sheet
   - `Lab/` - lab instructions for lab-12
   - `LaTeX/` - LaTeX quick reference sheet
+  - `Lecture/` - lecture notebook for week
   - `PS-09/` - Problem Set 08 instructions
   - `Slides/` - slides for lecture
   - `.gitignore`
