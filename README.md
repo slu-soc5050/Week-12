@@ -1,14 +1,13 @@
-Week-11 <img src="https://raw.githubusercontent.com/slu-soc5050/Core-Documents/sources/soc5050LogoSm_v2.png" align="right" />
+Week-12 <img src="https://raw.githubusercontent.com/slu-soc5050/Core-Documents/sources/soc5050LogoSm_v2.png" align="right" />
 ===========================================================
 
 ### Repository Contents
 This repository contains files for:
   - `Functions/` - function quick reference sheet
-  - `Lab/` - lab instructions for lab-11
+  - `Lab/` - lab instructions for lab-12
   - `LaTeX/` - LaTeX quick reference sheet
-  - `PS-08/` - Problem Set 08 instructions
+  - `PS-09/` - Problem Set 08 instructions
   - `Slides/` - slides for lecture
-  - `WeeklyPrep/` - weekly prep for week 11
   - `.gitignore`
   - `LICENSE_CODE.md`
   - `LICENSE_TEXT.md`
