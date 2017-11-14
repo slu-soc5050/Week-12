@@ -1,0 +1,209 @@
+---
+title: "Week-12 Lecture"
+output: html_notebook
+---
+
+## Introduction
+
+This is the sample code for Week 12's lecture.
+
+## Dependencies
+
+```{r}
+library(dplyr)
+library(ggplot2)
+library(ggthemes)
+```
+
+## Plots for Dissemination
+Each code block in this section needs to be updated with the relevant options to match the plot displayed on the slides.
+
+### Base Plot
+This is the base plot design we have been working with so far this semester.
+
+```{r}
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
+  geom_point(mapping = aes(color = as.factor(cyl)), position = "jitter") +
+  geom_smooth(method = "lm")
+```
+
+### Increase Point Size
+Increase the point size on the plot below to 4.
+
+```{r}
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
+  geom_point(mapping = aes(color = as.factor(cyl)), size = 4, position = "jitter") +
+  geom_smooth(method = "lm") 
+```
+
+### Increase Font Size
+Increase the font size of the plot below to 16.
+
+```{r}
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
+  geom_point(mapping = aes(color = as.factor(cyl)), size = 4, position = "jitter") +
+  geom_smooth(method = "lm") +
+  theme_grey(base_size = 16)
+```
+
+### Adjust the Theme
+The plot below needs a theme other than `theme_grey()`
+
+```{r}
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
+  geom_point(mapping = aes(color = as.factor(cyl)), size = 4, position = "jitter") +
+  geom_smooth(method = "lm") +
+  theme_wsj(base_size = 16)
+```
+
+### Adjust Labels
+The plot below needs appropriate x and y axis labels added.
+
+```{r}
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
+  geom_point(mapping = aes(color = as.factor(cyl)), size = 4, position = "jitter") +
+  geom_smooth(method = "lm") +
+  theme_hc(base_size = 16) +
+  labs(
+    x = "Engine Displacement (litres)",
+    y = "Highway Fuel Efficiency (mpg)"
+  )
+```
+
+### Add Title
+The plot below needs a title added.
+
+```{r}
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
+  geom_point(mapping = aes(color = as.factor(cyl)), size = 4, position = "jitter") +
+  geom_smooth(method = "lm") +
+  theme_hc(base_size = 16) +
+  labs(
+    title = "Fuel Efficiency and Engine Size",
+    x = "Engine Displacement (litres)",
+    y = "Highway Fuel Efficiency (mpg)"
+  )
+```
+
+### Add Subtitle
+The plot below needs a subtitle added.
+
+```{r}
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
+  geom_point(mapping = aes(color = as.factor(cyl)), size = 4, position = "jitter") +
+  geom_smooth(method = "lm") +
+  theme_hc(base_size = 16) +
+  labs(
+    title = "Fuel Efficiency and Engine Size",
+    subtitle = "Select Vehicles Sold in the United States",
+    x = "Engine Displacement (litres)",
+    y = "Highway Fuel Efficiency (mpg)"
+  )
+```
+
+### Add Caption
+The plot below needs a caption added noting the source of the data.
+
+```{r}
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
+  geom_point(mapping = aes(color = as.factor(cyl)), size = 4, position = "jitter") +
+  geom_smooth(method = "lm") +
+  theme_hc(base_size = 16) +
+  labs(
+    title = "Fuel Efficiency and Engine Size",
+    subtitle = "Select Vehicles Sold in the United States",
+    caption = "Data via ggplot2 package for R",
+    x = "Engine Displacement (litres)",
+    y = "Highway Fuel Efficiency (mpg)"
+  )
+```
+
+### Edit Legend Title
+The plot below needs a title added to the legend.
+
+```{r}
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
+  geom_point(mapping = aes(color = as.factor(cyl)), size = 4, position = "jitter") +
+  geom_smooth(method = "lm") +
+  theme_hc(base_size = 16) +
+  labs(
+    title = "Fuel Efficiency and Engine Size",
+    subtitle = "Select Vehicles Sold in the United States",
+    caption = "Data via ggplot2 package for R",
+    x = "Engine Displacement (litres)",
+    y = "Highway Fuel Efficiency (mpg)",
+    color = "Cylinders"
+  )
+```
+
+### Edit Legend Size
+The plot below needs additional space added between legend items.
+
+```{r}
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
+  geom_point(mapping = aes(color = as.factor(cyl)), size = 4, position = "jitter") +
+  geom_smooth(method = "lm") +
+  theme_hc(base_size = 16) +
+  labs(
+    title = "Fuel Efficiency and Engine Size",
+    subtitle = "Select Vehicles Sold in the United States",
+    caption = "Data via ggplot2 package for R",
+    x = "Engine Displacement (litres)",
+    y = "Highway Fuel Efficiency (mpg)",
+    color = "Cylinders"
+  ) +
+  theme(legend.key.size = unit(1, units="cm")) 
+```
+
+### Edit Legend Labels
+The plot below needs legend labels applied to the plot.
+
+```{r}
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
+  geom_point(mapping = aes(color = as.factor(cyl)), size = 4, position = "jitter") +
+  geom_smooth(method = "lm") +
+  theme_hc(base_size = 16) +
+  labs(
+    title = "Fuel Efficiency and Engine Size",
+    subtitle = "Select Vehicles Sold in the United States",
+    caption = "Data via ggplot2 package for R",
+    x = "Engine Displacement (litres)",
+    y = "Highway Fuel Efficiency (mpg)",
+    color = "Cylinders"
+  ) +
+  theme(legend.key.size = unit(1, units="cm")) +
+  scale_colour_discrete(labels = c("Four", "Five", "Six", "Eight"))
+```
+
+### Remove Legend
+The plot below needs to have the legened removed.
+
+```{r}
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
+  geom_point(mapping = aes(color = as.factor(cyl)), size = 4, position = "jitter") +
+  geom_smooth(method = "lm") +
+  theme_hc(base_size = 16) +
+  labs(
+    title = "Fuel Efficiency and Engine Size",
+    subtitle = "Select Vehicles Sold in the United States",
+    caption = "Data via ggplot2 package for R",
+    x = "Engine Displacement (litres)",
+    y = "Highway Fuel Efficiency (mpg)",
+    color = "Cylinders"
+  ) +
+  theme(legend.position = "none")
+```
+
+## LaTeX Equations in `R`
+Try adding the LaTeX equation from your ShareLaTeX project to this file. Save the notebook, and then try hovering your mouse over the LaTeX syntax. Then open the html output this file has created in a browser and see how it displays.
+
+$ y = \alpha + {\beta}_{1}{x}_{1} + \epsilon $
+
+## Bivarite Regression in `R`
+The code below saves the results of the linear model to an object named `model` and then displays a summary of the results.
+
+```{r}
+model <- lm(hwy ~ displ, data = mpg)
+summary(model)
+```
+
